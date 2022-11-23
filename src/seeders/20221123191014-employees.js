@@ -15,7 +15,7 @@ module.exports = {
         {
           first_name: 'Ayrton',
           last_name: 'Keno',
-          age: 51,
+          age: 54,
         },
         {
           first_name: 'Robin',

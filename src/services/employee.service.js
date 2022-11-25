@@ -4,8 +4,15 @@ const getAll = async () => {
   const users = await Employee.findAll({
     include: { model: Address, as: 'addresses' },
   });
-
   return users;
 };
 
-module.exports = { getAll };
+const getById = async (id) => {
+  const employee = await Employee.findOne({
+      where: { id },
+      include: [{ model: Address, as: 'addresses', attributes: { exclude: ['number']} }],
+    });
+  return employee;
+}
+
+module.exports = { getAll, getById };
